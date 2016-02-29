@@ -1,0 +1,40 @@
+<md-dialog ng-cloak>
+    <form name="settings">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>App settings</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <span class="md-display-1">
+                    Do you want to use another source of fresh news?
+                </span><br>
+                <span class="md-body-2">
+                    Just add the url of your new source of news here:
+                </span>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>News source (url)</label>
+                    <input name="url" type="text" ng-model="url" required>
+                    <div ng-messages="settings.url.$error">
+                        <div ng-message="required">Please add a new url before saving.</div>
+                    </div>
+                </md-input-container>
+                <span class="md-caption"><em>Current source: <b>{{actualUrl}}</b></em></span>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="saveChanges('url')">
+                Save changes
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

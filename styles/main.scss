@@ -1,0 +1,107 @@
+// bower:scss
+// endbower
+
+body, md-content {
+    background: #eee;
+}
+
+*:focus {
+    outline: none;
+}
+
+.md-headline, .md-display-1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+.md-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+md-divider {
+    margin: 10px 0;
+}
+
+.bg-img {
+    background: url('/images/bg.png');
+    background-size: cover;
+    background-position:center;
+}
+
+.header-title {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.config-icon:hover {
+    cursor: pointer;
+}
+
+.main-container {
+    overflow: hidden;
+    max-width: 900px;
+    margin: auto;
+    background: #eee;
+}
+
+md-card{
+    border-radius: 5px;
+    background: #FF9800;
+    color: #fff;
+
+    md-card-title {
+        padding: 10px;
+    }
+
+    md-card-title-text {
+        max-height: 90px;
+    }
+
+    md-card-content {
+        background: #fff;
+        color: #000;
+        padding: 0px;
+
+        .text {
+            padding: 10px 16px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-height: 20vh;
+            object-fit: cover;
+        }
+    }
+
+    .md-actions{
+        padding: 0;
+    }
+
+    md-card-actions {
+        padding: 0;
+    }
+
+    .title-wrapper:hover {
+        cursor: pointer;
+    }
+    .img-wrapper{
+        padding: 10px;
+
+        img{
+            border-radius: 50%;
+        }
+    } 
+}
+
+.md-toolbar-tools .md-accent .material-icons {
+    color: #fff;
+}
+.welcome-msg {
+    text-align: center;
+    color: #aaa;
+    margin-top: 20vh;
+}

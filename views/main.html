@@ -1,0 +1,45 @@
+<md-toolbar md-scroll-shrink="true" class="md-tall bg-img">
+    <span flex></span>
+    <div class="md-toolbar-tools md-toolbar-tools-bottom">
+        <md-button ng-click="getNews()" class="md-raised md-icon-button md-accent">
+            <i class="material-icons">rss_feed</i>
+        </md-button>
+        <span class="md-display-1 header-title" ng-bind-html="activeNews"></span>
+        <i ng-click="showConfig($event)" class="material-icons config-icon">settings</i>
+    </div>
+</md-toolbar>
+<md-content>
+    <md-progress-linear ng-show="loading" class="wow fadeInDown" data-wow-duration="0.3s" md-mode="indeterminate"></md-progress-linear>
+    <div class="welcome-msg" ng-show="noNews" layout="row" layout-fill layout-wrap>
+        <div flex ng-bind-html="msg">
+
+        </div>
+    </div>
+    <div layout-gt-sm="row" layout-sm="column"  class="main-container" layout-wrap>
+        <div flex-gt-sm="50"  ng-repeat="news in newsList">
+            <md-card  class="wow fadeInUp" data-wow-delay="{{news.animationDelay}}">
+                <div ng-click="showContent(news)" slide-toggle="#newsContent_{{$index}}" layout="row" class="title-wrapper" >
+                    <div class="img-wrapper" flex="20">
+                        <img ng-src="{{news.image}}" alt="">
+                    </div>
+                    <div flex-xs="80" flex-sm="80" flex-gt-sm="70">
+                        <md-card-title>
+                            <md-card-title-text class="md-headline md-primary" data-ng-bind="news.title" data-ellipsis></md-card-title-text>
+                        </md-card-title>
+                    </div>
+                    <md-card-actions layout="column" layout-align="end center">
+                        <i class="material-icons">{{showContent_id == news.id ? 'keyboard_arrow_up' :'more_horiz' }}</i>
+                    </md-card-actions>
+                </div>
+                <md-card-content class="slideable" easing="ease-out" duration="0.2s" id="newsContent_{{$index}}">
+                    <img ng-src="{{news.image}}" alt="">
+                    <div class="text">
+                        <span class="md-title">{{news.title}}</span>
+                        <md-divider></md-divider>
+                        {{news.content}}
+                    </div>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</md-content>
