@@ -1,7 +1,7 @@
 # grability test app
 Test app to apply to front-end developer of Grability
 
-This app has been built using angular.js and dependends on the following libraries:
+This app has been built using angular.js and depends on the following libraries:
 
  1. [Angular material](https://material.angularjs.org/latest/), used for
    the UI of the app
@@ -17,7 +17,7 @@ This app has been built using angular.js and dependends on the following librari
 
 **Note:** The app can be run using other server methods, for instance using brackets live preview
 
-**Config a new url to fetch news**
+**Set a new url to fetch news**
 
 1. Click in the settings icon inside the app
 2. Add the new url in the input
